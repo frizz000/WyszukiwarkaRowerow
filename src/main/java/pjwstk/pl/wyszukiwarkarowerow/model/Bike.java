@@ -20,9 +20,15 @@ public class Bike implements Serializable {
     private Double weight;
     private String equipment;
     private String description;
+    private String imageUrl;
+    private String type;
 
-    public Long getId() {
-        return id;
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getModelName() {
@@ -79,5 +85,13 @@ public class Bike implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

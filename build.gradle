@@ -26,8 +26,9 @@ dependencies {
     implementation('org.hibernate:hibernate-core:6.1.5.Final')
     implementation('org.glassfish.jaxb:jaxb-runtime:4.0.1')
     implementation('org.hibernate.validator:hibernate-validator:8.0.0.Final')
-    implementation("com.microsoft.sqlserver:mssql-jdbc:11.2.3.jre17")
+    implementation('org.postgresql:postgresql:42.5.4')
     implementation('com.zaxxer:HikariCP:5.0.1')
+    implementation('com.google.code.gson:gson:2.10.1')
     implementation('org.hibernate:hibernate-hikaricp:6.1.7.Final')
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")

@@ -16,10 +16,6 @@ public class Company {
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Bike> bikes;
 
-    public Long getId() {
-        return id;
-    }
-
     public String getName() {
         return name;
     }
