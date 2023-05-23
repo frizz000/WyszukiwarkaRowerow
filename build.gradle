@@ -14,8 +14,8 @@ ext {
     junitVersion = '5.9.1'
 }
 
-sourceCompatibility = '11'
-targetCompatibility = '11'
+sourceCompatibility = '17'
+targetCompatibility = '17'
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
@@ -26,6 +26,9 @@ dependencies {
     implementation('org.hibernate:hibernate-core:6.1.5.Final')
     implementation('org.glassfish.jaxb:jaxb-runtime:4.0.1')
     implementation('org.hibernate.validator:hibernate-validator:8.0.0.Final')
+    implementation("com.microsoft.sqlserver:mssql-jdbc:11.2.3.jre17")
+    implementation('com.zaxxer:HikariCP:5.0.1')
+    implementation('org.hibernate:hibernate-hikaricp:6.1.7.Final')
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
