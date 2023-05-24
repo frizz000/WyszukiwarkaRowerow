@@ -15,6 +15,9 @@ public class Bike implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "company_id", nullable = false)
     private Company company;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User owner;
     private String size;
     private Double price;
     private Double weight;
@@ -93,5 +96,13 @@ public class Bike implements Serializable {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
 }

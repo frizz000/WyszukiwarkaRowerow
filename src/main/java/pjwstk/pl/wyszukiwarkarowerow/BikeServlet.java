@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import pjwstk.pl.wyszukiwarkarowerow.dto.BikeDTO;
 import pjwstk.pl.wyszukiwarkarowerow.model.Bike;
 import pjwstk.pl.wyszukiwarkarowerow.model.Company;
+import pjwstk.pl.wyszukiwarkarowerow.model.User;
 
 import java.io.IOException;
 import java.util.List;
@@ -24,6 +25,10 @@ public class BikeServlet extends HttpServlet {
         em = emf.createEntityManager();
 
         em.getTransaction().begin();
+
+        // ========================Users============================
+
+        // ========================Companies========================
 
         Company company1 = new Company();
         company1.setName("Commencal");
@@ -43,12 +48,48 @@ public class BikeServlet extends HttpServlet {
         company3.setContact("trek@info.eu");
         em.persist(company3);
 
+        User user1 = new User();
+        user1.setName("Jan");
+        user1.setSurname("Kowalski");
+        user1.setEmail("efds.rfr@pl.pl");
+        user1.setPhoneNumber("123456789");
+        em.persist(user1);
+
+        User user2 = new User();
+        user2.setName("Adam");
+        user2.setSurname("Nowak");
+        user2.setEmail("nowak.elo@uyyt.pl");
+        user2.setPhoneNumber("123456789");
+        em.persist(user2);
+
+        User user3 = new User();
+        user3.setName("Kamil");
+        user3.setSurname("Kowalski");
+        user3.setEmail("kamil@onet.pl");
+        user3.setPhoneNumber("123456789");
+        em.persist(user3);
+
+        User user4 = new User();
+        user4.setName("Dawid");
+        user4.setSurname("Madej");
+        user4.setEmail("dawid.madej@pl.pl");
+        user4.setPhoneNumber("123456789");
+        em.persist(user4);
+
+        User user5 = new User();
+        user5.setName("Kuba");
+        user5.setSurname("Kowalski");
+        user5.setEmail("kowalski.kuba@pl.pl");
+        user5.setPhoneNumber("123456789");
+        em.persist(user5);
+
         // ========================Commencal========================
 
         Bike bike1 = new Bike();
         bike1.setModelName("V4.2");
         bike1.setType("Downhill");
         bike1.setCompany(company1);
+        bike1.setOwner(user1);
         bike1.setImageUrl("https://i.imgur.com/JslWgzD.jpg");
         bike1.setSize("M");
         bike1.setPrice(16000.0);
@@ -61,6 +102,7 @@ public class BikeServlet extends HttpServlet {
         bike3.setModelName("Meta AM 29");
         bike3.setType("Enduro");
         bike3.setCompany(company1);
+        bike3.setOwner(user2);
         bike3.setImageUrl("https://i.imgur.com/RVxEGnr.jpg");
         bike3.setSize("L");
         bike3.setPrice(20000.0);
@@ -75,6 +117,7 @@ public class BikeServlet extends HttpServlet {
         bike2.setModelName("Megatower");
         bike2.setType("Enduro");
         bike2.setCompany(company2);
+        bike2.setOwner(user3);
         bike2.setImageUrl("https://i.imgur.com/9mZXRzB.jpg");
         bike2.setSize("L");
         bike2.setPrice(25000.0);
@@ -87,6 +130,7 @@ public class BikeServlet extends HttpServlet {
         bike4.setModelName("Nomad");
         bike4.setType("Enduro");
         bike4.setCompany(company2);
+        bike4.setOwner(user4);
         bike4.setImageUrl("https://i.imgur.com/HYX0g4V.jpg");
         bike4.setSize("M");
         bike4.setPrice(30000.0);
@@ -99,6 +143,7 @@ public class BikeServlet extends HttpServlet {
         bike5.setModelName("V 10");
         bike5.setType("Downhill");
         bike5.setCompany(company2);
+        bike5.setOwner(user5);
         bike5.setImageUrl("https://i.imgur.com/iJpu2S9.jpg");
         bike5.setSize("L");
         bike5.setPrice(35000.0);
@@ -111,6 +156,7 @@ public class BikeServlet extends HttpServlet {
         bike6.setModelName("Bronson");
         bike6.setType("Trial");
         bike6.setCompany(company2);
+        bike6.setOwner(user1);
         bike6.setImageUrl("https://i.imgur.com/OiTRkIn.jpg");
         bike6.setSize("M");
         bike6.setPrice(20000.0);
@@ -125,6 +171,7 @@ public class BikeServlet extends HttpServlet {
         bike7.setModelName("Slash");
         bike7.setType("Enduro");
         bike7.setCompany(company3);
+        bike7.setOwner(user2);
         bike7.setImageUrl("https://i.imgur.com/E1v2afk.png");
         bike7.setSize("L");
         bike7.setPrice(25000.0);
@@ -137,6 +184,7 @@ public class BikeServlet extends HttpServlet {
         bike8.setModelName("Remedy");
         bike8.setType("Enduro");
         bike8.setCompany(company3);
+        bike8.setOwner(user3);
         bike8.setImageUrl("https://i.imgur.com/5o004tP.jpg");
         bike8.setSize("L");
         bike8.setPrice(25000.0);
@@ -149,6 +197,7 @@ public class BikeServlet extends HttpServlet {
         bike9.setModelName("Session");
         bike9.setType("Downhill");
         bike9.setCompany(company3);
+        bike9.setOwner(user4);
         bike9.setImageUrl("https://i.imgur.com/uJC266h.jpg");
         bike9.setSize("L");
         bike9.setPrice(25000.0);
@@ -161,6 +210,7 @@ public class BikeServlet extends HttpServlet {
         bike10.setModelName("Madone");
         bike10.setType("Road");
         bike10.setCompany(company3);
+        bike10.setOwner(user5);
         bike10.setImageUrl("https://i.imgur.com/sZJs59c.png");
         bike10.setSize("L");
         bike10.setPrice(25000.0);
@@ -173,6 +223,7 @@ public class BikeServlet extends HttpServlet {
         bike11.setModelName("Domane");
         bike11.setType("Road");
         bike11.setCompany(company3);
+        bike11.setOwner(user1);
         bike11.setImageUrl("https://i.imgur.com/Z5cA6Ej.jpg");
         bike11.setSize("L");
         bike11.setPrice(25000.0);
@@ -191,17 +242,17 @@ public class BikeServlet extends HttpServlet {
         String companyName = request.getParameter("companyName");
         String type = request.getParameter("type");
         String size = request.getParameter("size");
-        /*int minPrice = Integer.parseInt(request.getParameter("minPrice"));
-        int maxPrice = Integer.parseInt(request.getParameter("maxPrice"));*/
+        String ownerName = request.getParameter("ownerName");
+        String ownerSurname = request.getParameter("ownerSurname");
 
-        TypedQuery<Bike> query = em.createQuery("SELECT b FROM Bike b WHERE b.modelName LIKE :modelName AND b.company.name LIKE :companyName AND b.type LIKE :type AND b.size LIKE :size", Bike.class);
+        TypedQuery<Bike> query = em.createQuery("SELECT b FROM Bike b WHERE b.modelName LIKE :modelName AND b.company.name LIKE :companyName AND b.type LIKE :type AND b.size LIKE :size AND b.owner.name LIKE :ownerName AND b.owner.surname LIKE :ownerSurname", Bike.class);
         query.setParameter("modelName", "%" + modelName + "%");
         query.setParameter("companyName", "%" + companyName + "%");
         query.setParameter("type", "%" + type + "%");
         query.setParameter("size", "%" + size + "%");
+        query.setParameter("ownerName", "%" + ownerName + "%");
+        query.setParameter("ownerSurname", "%" + ownerSurname + "%");
 
-        /*query.setParameter("minPrice", minPrice);
-        query.setParameter("maxPrice", maxPrice);*/
         List<Bike> bikes = query.getResultList();
 
         List<BikeDTO> bikesDTO = bikes.stream().map(BikeDTO::new).toList();
@@ -210,6 +261,7 @@ public class BikeServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         response.getWriter().write(this.gson.toJson(bikesDTO));
     }
+
 
     public void destroy() {
         em.close();

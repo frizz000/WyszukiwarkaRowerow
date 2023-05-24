@@ -3,13 +3,16 @@ package pjwstk.pl.wyszukiwarkarowerow.dto;
 import pjwstk.pl.wyszukiwarkarowerow.model.Bike;
 
 public class BikeDTO {
-    private String model;
-    private CompanyDTO company;
+    private final String model;
+    private final CompanyDTO company;
     private String type;
     private String imageURL;
-    private String size;
-    private Double price;
-    private Double weight;
+    private final String size;
+    private final Double price;
+    private final UserDTO owner;
+    private final Double weight;
+    private final String equipment;
+    private final String description;
 
     public String getModel() {
         return model;
@@ -47,12 +50,10 @@ public class BikeDTO {
         this.imageURL = imageURL;
     }
 
-    private String equipment;
-    private final String description;
-
     public BikeDTO (Bike bike){
         this.model = bike.getModelName();
         this.company = new CompanyDTO(bike.getCompany());
+        this.owner = new UserDTO(bike.getOwner());
         this.type = bike.getType();
         this.size = bike.getSize();
         this.price = bike.getPrice();
@@ -60,5 +61,17 @@ public class BikeDTO {
         this.equipment = bike.getEquipment();
         this.description = bike.getDescription();
         this.imageURL = bike.getImageUrl();
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public UserDTO getOwner() {
+        return owner;
     }
 }

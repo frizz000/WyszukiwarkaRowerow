@@ -47,14 +47,4 @@ public class Company {
     public void setBikes(List<Bike> bikes) {
         this.bikes = bikes;
     }
-
-    public void addBike(Bike bike) {
-        bikes.add(bike);
-        bike.setCompany(this);
-    }
-
-    public void removeBike(Bike bike) {
-        bikes.remove(bike);
-        bike.setCompany(null);
-    }
 }

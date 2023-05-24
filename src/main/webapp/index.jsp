@@ -12,6 +12,8 @@
 <form id="searchForm">
     <input name="modelName" placeholder="Nazwa modelu"/>
     <input name="companyName" placeholder="Nazwa firmy"/>
+    <input name="ownerName" placeholder="Imię właściciela"/>
+    <input name="ownerSurname" placeholder="Nazwisko właściciela"/>
 
     <label for="type">Typ roweru:</label>
     <select name="type" id="type">

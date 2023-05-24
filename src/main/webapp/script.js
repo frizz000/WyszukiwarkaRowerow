@@ -12,6 +12,21 @@ $(function() {
                 bikeElement.append($('<p>').text('Weight: ' + bike.weight));
                 bikeElement.append($('<p>').text('Equipment: ' + bike.equipment));
                 bikeElement.append($('<p>').text('Description: ' + bike.description));
+
+                let ownerElement = $('<p>').hide();
+                bikeElement.append(ownerElement);
+                let buttonElement = $('<button>').text('Show owner').on('click', function() {
+                    if (ownerElement.is(":visible")) {
+                        ownerElement.hide();
+                        $(this).text('Show owner');
+                    } else {
+                        ownerElement.text('Owner: ' + bike.owner.name + ' ' + bike.owner.surname + ' (' + bike.owner.email + ')' + ' ' + bike.owner.phoneNumber);
+                        ownerElement.show();
+                        $(this).text('Hide owner');
+                    }
+                });
+                bikeElement.append(buttonElement);
+
                 $('#results').append(bikeElement);
             });
         });
